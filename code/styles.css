@@ -1,0 +1,72 @@
+/*
+	These apply to the full page as everything
+	is in the body element
+*/
+body{
+	font-family: verdana;
+}
+/***************************************************
+	BONUS: Finish the code to give style to the table
+	Tables are made of the following tags:
+	table 	the full table
+	tr 		a row in the table
+	th 		header in the table
+	td 		data in the table
+****************************************************/
+
+
+/*
+	You can apply styles to different types of
+	tags like so
+*/
+div{
+	margin: 5px;
+	padding: 5px;
+}
+/***************************************************
+	Finish the code to give each of the divs with
+	the section class a solid black border 2px thick
+	and align sub elements in the center
+****************************************************/
+.section{
+	text-align: center;
+	border: 2px solid black;
+}
+
+.text {
+	font-size: 20px;
+}
+
+/*
+	hash tags refer to item ids
+*/
+#welcome-section{
+	background-color: red;
+	color: white;
+}
+
+#entry-section{
+	background-color: yellow;
+}
+
+#history-section{
+	background-color: blue;
+	height: 200px;
+	overflow-y: scroll;
+	color: white;
+}
+
+#name-entry{
+	border: 1px solid black;
+	margin: 10px;
+	height: 20px;
+	width: 20%;
+}
+
+#name-submit{
+	background-color: white;
+	border: 1px solid black;
+	width: 60px;
+	font-size: 18px;
+}
+

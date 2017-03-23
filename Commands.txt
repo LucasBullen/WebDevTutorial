@@ -1,0 +1,42 @@
+Commands:
+Fix pem file permissions
+	chmod 400 {/path/to/webDevTutorial.pem}
+Access instance
+	ssh -i {/path/to/webDevTutorial.pem} ec2-user@{ec2-public-dns-address}
+Update instance
+	sudo yum update -y
+Install LAMP
+	sudo yum install -y httpd24 php70 mysql56-server php70-mysqlnd
+Start Apache
+	sudo service httpd start
+Make Apache always start
+	sudo chkconfig httpd on
+Enable permissions to edit
+	sudo groupadd www
+	sudo usermod -a -G www ec2-user
+Exit to finalize changes
+	exit
+	ssh -i {/path/to/webDevTutorial.pem} ec2-user@{ec2-public-dns-address}
+Confirm it worked
+	groups
+More permissions stuff
+	sudo chown -R root:www /var/www
+	sudo chmod 2775 /var/www
+	find /var/www -type d -exec sudo chmod 2775 {} \;
+	find /var/www -type f -exec sudo chmod 0664 {} \;
+Create a test page
+	echo Hello World > /var/www/html/test.html
+Start MySQL
+	sudo service mysqld start
+Secure MySQL
+	sudo mysql_secure_installation
+Make MySQL always start
+	sudo chkconfig mysqld on
+Begin using MySQL
+	mysql -u root -p
+Create table and insert first row
+	create database GuestBook;
+	use GuestBook;
+	create table guests(name VARCHAR(120), datetime DATETIME);
+	insert into guests (name, datetime) VALUES ('Lucas', '2017-03-22 10:30:00');
+	select * from guests;
